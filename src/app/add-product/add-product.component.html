@@ -1,0 +1,52 @@
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Choose Category</label>
+    <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="catName" (change)="catChange($event.target.value)"
+      name="cat">
+      <option *ngFor="let cat of categories">{{cat.name}}</option>
+    </select>
+  </div>
+
+  <div *ngIf="isEdit" class="form-group">
+    <label for="exampleFormControlSelect1">Choose Product</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="catP" (change)="prodChange($event.target.value)">
+      <option *ngFor="let cat of nProducts" [value]="cat.custom">{{cat.name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Name</label>
+    <input type="text" class="form-control" name="pname" [(ngModel)]="prodName" id="exampleFormControlTextarea" #pName>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="prodDesc" rows="3" name="something" #desc></textarea>
+  </div>
+
+  <div class=" row form-group">
+    <label for="exampleFormControlFile1"></label>
+    <input name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" />
+    <div *ngFor="let theImg of base64textString ">
+        <div class="col-lg-2 col-md-2">
+          <img [src]="theImg"  style="max-width:300px;max-height:300px;border-radius:16%; box-shadow: 2px 4px 3px #2b2b2b;border-radius:3%;" />    
+        </div>
+    
+      </div>
+
+  </div>
+
+  <div class="text-center" *ngIf="!isEdit">
+    <button type="button" style="width:50%;" class="btn btn-success btn-lg" (click)="addP(pName.value,desc.value)">Add Product</button>
+  </div>
+  <div *ngIf="isEdit" class="text-center">
+    <button type="button" class="btn btn-danger btn-lg" (click)="editP('d')">Delete Category</button>
+    <button type="button" style="margin-left:2%" class="btn btn-warning btn-lg" (click)="editP('u')">Update Category</button>
+
+  </div>
+</form>
+
+
+
+
+<ngx-alerts></ngx-alerts>

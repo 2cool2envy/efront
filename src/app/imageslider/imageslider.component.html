@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<h1 class="text-center animated zoomInRight"> Manager Image Slider here </h1>
+
+<div class="row">
+  <div style="width:100%;margin:auto;" class="col-10">
+    <form>
+
+
+        <br>
+      <div class="row form-group" style="box-shadow: 3px 2px 3px 1px #bbbaba;;padding:3%;">
+        
+          <h5 class="col-12 text-center"> Choose the images to be added </h5>
+          <div class="col-12 text-center" style="margin:2.5%;">
+              <input  name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" />
+
+          </div>
+          <br>
+          <div class="col-12 text-center">
+              <button type="submit" class="btn btn-success " (click)="submitImages()">Submit images</button>
+
+          </div>
+
+      </div>
+    </form>
+
+
+  </div>
+  
+</div>  <!-- end of row -->
+  <div class="row">
+      
+      
+          <div *ngFor="let theImg of base64textString ">
+              <div class="col-3">
+              <div class="col-lg-2 col-md-2">
+                <img [src]="theImg"  style="max-width:600px;max-height:300px;border-radius:16%; box-shadow: 2px 4px 3px #2b2b2b;border-radius:3%;" />    
+              </div>
+          
+            </div>
+      
+<div class="text-center"> Delete</div>
+      </div>
+
+    
+
+   
+
+  </div> <!-- end of row -->
+
+
+
+
+
+<ngx-alerts></ngx-alerts>

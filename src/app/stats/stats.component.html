@@ -1,0 +1,39 @@
+<div class="row container">
+  <div class="col-6">
+      <div class="form-group">
+          <label for="exampleFormControlSelect1">Choose Category</label>
+          <select class="form-control" id="exampleFormControlSelect1" #cat (change)="catSelected($event.target.value)">
+            <option >hello</option>
+          </select>
+        </div>
+
+        <div class="text-center"> Or</div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Search</label>
+           <input class="form-control" type="search">
+          </div>
+<table class="table table-stripped">
+  <thead>
+    <th> S.No</th>
+    <th> Name</th>
+    <th> Dated</th>
+  </thead>
+  <tbody>
+    <td>1</td>
+    <td>Philips some element</td>
+    <td>11/11/11111</td>
+  </tbody>
+</table>
+
+  </div> <!-- this is the left part -->
+  <div class="col-6">
+    
+
+
+  </div>  <!-- this is the right part -->
+
+</div> <!-- this is the end of the row -->
+
+
+  <ngx-alerts></ngx-alerts>

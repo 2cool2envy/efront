@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Description</th>
+        <th scope="col">eMail   </th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of feedback;let i = index">
+          <td>{{i+1}}</td>
+        <td>{{f.msg}}</td>
+        <td>{{f.email}}</td>
+        <td>{{f.date}} </td>
+      </tr>
+      
+    </tbody>
+  </table>

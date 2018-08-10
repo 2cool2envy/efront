@@ -1,0 +1,15 @@
+form{
+    width:50%;
+    margin: auto;
+    padding:4%;
+}
+.formContainer{
+    margin:6.6%;    
+    box-shadow: 18px 21px 30px darkgray;
+}
+.navbar{
+    background: #CB356B;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #BD3F32, #CB356B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color:white;
+}

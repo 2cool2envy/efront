@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h3 class="text-center"> Add</h3>
+    <br>
+  </div>
+
+  <div class="row" style="width:90%;margin:auto;" class="">
+    
+      
+      <div class="col">
+          <div class="text-center  animated bounceIn ">
+              <button type="button" class="btn btn-info" (click)="showHide('c')"> Add Category</button>  
+              <button style="margin-left:5%;" type="button" class="btn btn-info "  (click)="showHide('p')"> Add Product</button>  
+          </div> 
+          <div *ngIf="addC">
+                <app-add-category [isEdit]=false></app-add-category>
+        
+        </div>
+<div *ngIf="addP">
+        <app-add-product  [isEdit]=false></app-add-product>
+
+</div>
+
+      </div>
+
+    
+    </div>

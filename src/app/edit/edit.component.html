@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h3 class="text-center"> Edit</h3>
+    <br>
+  </div>
+
+  <div class="row" style="width:90%;margin:auto;">
+    
+      
+      <div class="col">
+          <div class="text-center">
+              <button type="button" class="btn btn-info " (click)="showHide('c')"> Edit Category</button>  
+              <button style="margin-left:5%;" type="button" class="btn btn-info "  (click)="showHide('p')"> Edit Product</button>  
+          </div> 
+          <div *ngIf="editC">
+                <app-add-category [isEdit]=true></app-add-category>
+        
+        </div>
+<div *ngIf="editP">
+        <app-add-product [isEdit]=true></app-add-product>
+
+</div>
+
+      </div>
+
+    
+    </div>

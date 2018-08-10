@@ -1,0 +1,32 @@
+<form>
+
+
+    <div *ngIf="isEdit" class="form-group">
+        <label for="exampleFormControlSelect1">Choose Category</label>
+        <select class="form-control" id="exampleFormControlSelect1" #cat (change)="catSelected($event.target.value)">
+          <option [value]="c.custom" *ngFor="let c of categories">{{c.title}}</option>
+        </select>
+      </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Category name</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" [disabled] ="!isCatSelected && isEdit" #name [(ngModel)]="catName" placeholder="Name of category" name="catNameText">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" [disabled] ="!isCatSelected && isEdit" id="exampleFormControlTextarea1" #desc rows="3" [(ngModel)]="catDesc" name="desc"></textarea>
+    </div>
+    <div *ngIf="!isEdit" class="text-center">
+        <button type="button" style="width:50%;" class="btn btn-primary btn-lg" (click)="addCat(name.value,desc.value)">Add Category</button>
+    </div>
+
+    <div *ngIf="isEdit" class="text-center">
+        <button type="button" class="btn btn-danger btn-lg" (click)="editCat('d')">Delete Category</button>
+        <button type="button" style="margin-left:2%" class="btn btn-warning btn-lg" (click)="editCat('u')">Update Category</button>
+
+    </div>
+
+  </form>
+
+  <ngx-alerts></ngx-alerts>
